@@ -1,2 +1,2 @@
-# Markdown-Preview-App
-Markdown Previewer — React + Vite + Tailwind
+Markdown Preview App
+ Project in progress — README will be updated soon.
