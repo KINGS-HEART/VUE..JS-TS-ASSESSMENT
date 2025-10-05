@@ -7,7 +7,11 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
+  },
+  base: './', // 👈 Required for Netlify
+  build: {
+    chunkSizeWarningLimit: 1000,
   },
 })
