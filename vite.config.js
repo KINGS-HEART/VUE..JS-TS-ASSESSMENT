@@ -10,7 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "./", // 👈 Needed for Netlify
+  base: "/", // 👈 Needed for Netlify
   build: {
     chunkSizeWarningLimit: 2000,
   },
