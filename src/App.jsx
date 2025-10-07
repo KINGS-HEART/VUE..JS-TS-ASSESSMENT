@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MarkdownPreview from "./MarkdownPreview";
-import EditorPage from "./pages/EditorPage";
+import EditorPage from "./Pages/EditorPage";
 import PreviewPage from "./pages/PreviewPage";
 import SettingsPage from "./pages/SettingsPage";
 import ErrorTest from "./pages/ErrorTest";
