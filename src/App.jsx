@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MarkdownPreview from "./MarkdownPreview";
-import EditorPage from "./pages/EditorPage"; 
+import EditorPage from "./pages/editorpage"; 
 import PreviewPage from "./pages/PreviewPage";
 import SettingsPage from "./pages/SettingsPage";
 import ErrorTest from "./pages/ErrorTest";
@@ -16,7 +16,7 @@ import { Button } from "./components/ui/button"; // changed from @/
 export default function App() {
   return (
     <Router>
-      <MarkdownProvider>
+      <MarkdownProvider>     
         <main className="min-h-screen bg-gray-50 text-gray-800 font-sans">
           {/* Header */}
           <header className="p-4 bg-blue-600 text-white shadow-md">
