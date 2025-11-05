@@ -1,5 +1,3 @@
-# 📝 Markdown Previewer  
-
 # 📝 Markdown Preview App
 
 A simple and interactive React application that allows users to write and preview Markdown in real time.  
