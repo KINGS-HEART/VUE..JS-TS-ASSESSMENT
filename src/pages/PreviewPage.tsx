@@ -1,4 +1,3 @@
-import React from "react";
 import { useMarkdown } from "../context/MarkdownContext";
 import ReactMarkdown from "react-markdown";
 

@@ -1,5 +1,5 @@
 // src/utils/api.js
-export async function saveMarkdown(content) {
+export async function saveMarkdown(content: string) {
     try {
       const res = await fetch("https://your-api.com/api/save", {
         method: "POST",
@@ -12,7 +12,7 @@ export async function saveMarkdown(content) {
     }
   }
   
-  export async function loadMarkdown(id) {
+  export async function loadMarkdown(id: string) {
     try {
       const res = await fetch(`https://your-api.com/api/load/${id}`);
       const data = await res.json();
@@ -21,4 +21,3 @@ export async function saveMarkdown(content) {
       console.error("Error loading markdown:", error);
     }
   }
-  

@@ -1,11 +1,11 @@
-import React from "react";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 
-function Previewer({ markdown }) {
+function Previewer({ markdown }: { markdown: string }) {
   const getMarkdownText = () => {
     const rawMarkup = marked(markdown, { breaks: true, gfm: true });
-    return { __html: DOMPurify.sanitize(rawMarkup) };
+    const sanitizedMarkup = DOMPurify.sanitize(rawMarkup as string);
+    return { __html: sanitizedMarkup };
   };
 
   return (

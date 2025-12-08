@@ -1,7 +1,6 @@
-// src/pages/EditorPage.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMarkdown } from "../context/MarkdownContext";
-import { saveToApi, loadFromApi } from "../api/markdownApi"; // ✅ API integration
+import { saveToApi, loadFromApi } from "../API/markdownApi"; //
 
 export default function EditorPage() {
   const { markdown, setMarkdown } = useMarkdown();
@@ -13,7 +12,7 @@ export default function EditorPage() {
     try {
       setLoading(true);
       setMessage("");
-      const res = await saveToApi({ title: "Markdown Draft", body: markdown });
+      const res = await saveToApi({ title: "Markdown Draft", body: markdown, userId: 1 });
       setMessage(`✅ Saved successfully! (Post ID: ${res.id})`);
     } catch (err) {
       console.error(err);

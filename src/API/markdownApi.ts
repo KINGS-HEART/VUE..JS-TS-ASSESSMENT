@@ -1,7 +1,7 @@
 // src/api/markdownApi.js
 
 // ✅ Save markdown data (POST request)
-export async function saveToApi(payload) {
+export async function saveToApi(payload: { title: string; body: string; userId: number }) {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
