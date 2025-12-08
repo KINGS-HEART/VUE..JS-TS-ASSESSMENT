@@ -1,17 +1,25 @@
 // src/components/ErrorBoundary.jsx
 import React from "react";
 
-export default class ErrorBoundary extends React.Component {
-  constructor(props) {
+interface Props {
+  children: React.ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export default class ErrorBoundary extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(_: Error): State {
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error("Error caught by boundary:", error, info);
   }
 

@@ -1,9 +1,13 @@
-// src/context/MarkdownContext.jsx
-import React, { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext, ReactNode } from "react";
 
-const MarkdownContext = createContext();
+interface MarkdownContextType {
+    markdown: string;
+    setMarkdown: (markdown: string) => void;
+}
 
-export function MarkdownProvider({ children }) {
+const MarkdownContext = createContext<MarkdownContextType | undefined>(undefined);
+
+export function MarkdownProvider({ children }: { children: ReactNode }) {
   const defaultText = `# Welcome ✨\n\nStart typing your markdown here...`;
   const [markdown, setMarkdown] = useState(defaultText);
 
@@ -29,5 +33,9 @@ export function MarkdownProvider({ children }) {
 
 // custom hook for easier use
 export function useMarkdown() {
-  return useContext(MarkdownContext);
+  const context = useContext(MarkdownContext);
+  if (!context) {
+    throw new Error("useMarkdown must be used within a MarkdownProvider");
+  }
+  return context;
 }

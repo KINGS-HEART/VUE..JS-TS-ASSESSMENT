@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm"; // GitHub-flavored markdown
@@ -55,7 +55,7 @@ console.log(greet("Markdown"));
   }, [markdownText]);
 
   // Handle save (mock API)
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: { markdown: string }) => {
     setLoading(true);
     await new Promise((res) => setTimeout(res, 1200));
     alert("✅ Markdown saved:\n\n" + data.markdown);
@@ -75,11 +75,13 @@ console.log(greet("Markdown"));
   };
 
   // Upload markdown file
-  const handleUpload = (file) => {
+  const handleUpload = (file: File) => {
     if (file && (file.type === "text/markdown" || file.name.endsWith(".md"))) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        setValue("markdown", event.target.result, { shouldValidate: true });
+        if (event.target) {
+          setValue("markdown", event.target.result as string, { shouldValidate: true });
+        }
       };
       reader.readAsText(file);
     } else {
@@ -88,18 +90,22 @@ console.log(greet("Markdown"));
   };
 
   // Handle file input change
-  const handleFileInput = (e) => {
-    const file = e.target.files[0];
-    handleUpload(file);
+  const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      handleUpload(file);
+    }
   };
 
   // Drag and drop
   const handleDrop = useCallback(
-    (e) => {
+    (e: React.DragEvent<HTMLFormElement>) => {
       e.preventDefault();
       setDragOver(false);
       const file = e.dataTransfer.files[0];
-      handleUpload(file);
+      if (file) {
+        handleUpload(file);
+      }
     },
     [setValue]
   );

@@ -1,8 +1,7 @@
 // src/App.jsx
-import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MarkdownPreview from "./MarkdownPreview";
-import EditorPage from "./pages/editorpage"; 
+import EditorPage from "./pages/EditorPage";
 import PreviewPage from "./pages/PreviewPage";
 import SettingsPage from "./pages/SettingsPage";
 import ErrorTest from "./pages/ErrorTest";
@@ -58,19 +57,19 @@ export default function App() {
               className="flex justify-center gap-4 mt-8"
             >
               <Link to="/" aria-label="Go to Home page">
-                <Button variant="default">Home</Button>
+                <Button variant="default" size="default" className="">Home</Button>
               </Link>
               <Link to="/editor" aria-label="Go to Editor page">
-                <Button variant="secondary">Editor</Button>
+                <Button variant="secondary" size="default" className="">Editor</Button>
               </Link>
               <Link to="/preview" aria-label="Go to Preview page">
-                <Button variant="secondary">Preview</Button>
+                <Button variant="secondary" size="default" className="">Preview</Button>
               </Link>
               <Link to="/settings" aria-label="Go to Settings page">
-                <Button variant="secondary">Settings</Button>
+                <Button variant="secondary" size="default" className="">Settings</Button>
               </Link>
               <Link to="/error-test" aria-label="Go to Error Test page">
-                <Button variant="secondary">Error Test</Button>
+                <Button variant="secondary" size="default" className="">Error Test</Button>
               </Link>
             </nav>
           </div>

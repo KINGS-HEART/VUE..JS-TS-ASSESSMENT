@@ -1,6 +1,4 @@
-import React from "react";
-
-function Editor({ markdown, setMarkdown }) {
+function Editor({ markdown, setMarkdown }: { markdown: string; setMarkdown: (markdown: string) => void }) {
   return (
     <section className="markdown">
       <article>
