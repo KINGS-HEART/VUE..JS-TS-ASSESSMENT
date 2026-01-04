@@ -1,39 +1,51 @@
-# 📝 Markdown Preview App
+# 📝 Markdown Preview App (Vue.js Edition)
 
-A simple and interactive React application that allows users to write and preview Markdown in real time.  
-Built with **React**, **Tailwind CSS**, and a custom **MarkdownContext** for global state management.
+A simple and interactive Vue.js application that allows users to write and preview Markdown in real time. Built with Vue.js, TypeScript, and styled with Tailwind CSS.
 
 ---
 
 ## 🚀 Features
 
-- 🖋️ Real-time Markdown editing and preview  
-- 💾 Save and load Markdown data via API  
-- 🧹 Clear and copy functionality for easy editing  
-- 🎨 Clean, responsive UI powered by Tailwind CSS  
-- ⚡ Context-based state management for better scalability  
+-   🖋️ **Real-time Markdown Editing:** Write Markdown in the text area and see the rendered HTML preview instantly.
+-   ⚡ **Powered by Vue.js:** Built with the progressive JavaScript framework for a reactive and efficient user experience.
+-   🔒 **TypeScript Support:** The entire codebase is written in TypeScript, providing type safety and improved developer experience.
+-   🎨 **Styled with Tailwind CSS:** A utility-first CSS framework for creating a clean and responsive design.
+-   💣 **Error Boundary:** Includes an error boundary to gracefully handle any rendering errors in the application.
 
 ---
 
-## 🌐 API Integration
+## 🛠️ Tech Stack
 
-This app integrates with the free [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) to simulate saving and loading Markdown content.
+-   **Framework:** [Vue.js](https://vuejs.org/)
+-   **Language:** [TypeScript](https://www.typescriptlang.org/)
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+-   **Build Tool:** [Vite](https://vitejs.dev/)
+-   **Markdown Parsing:** [Marked](https://marked.js.org/)
 
-### **API File (api.js)**
-```js
-// src/api/api.js
-export async function saveToApi(payload) {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) throw new Error("Failed to save");
-  return res.json();
-}
+---
 
-export async function loadFromApi(id = 1) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  if (!res.ok) throw new Error("Failed to fetch");
-  return res.json();
-}
+## ⚙️ Getting Started
+
+To run this project locally, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/KINGS-HEART/VUE..JS-TS-ASSESSMENT.git
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd VUE..JS-TS-ASSESSMENT
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+The application will be available at `http://localhost:5173`.
